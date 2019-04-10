@@ -1,0 +1,175 @@
+:root {
+    --bg-color: #5E8DEC;
+    --text-color: #1b2b34;
+    --calc-header: #EEF3FD;
+    --calc-bg: #ffffff;
+    --light-grey: #FDFDFD;
+    
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    /* background-image: url("http://sfwallpaper.com/images/black-background-hd-wallpapers-9.jpg"); */
+    color: var(--text-color);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+  .calc__wrapper{
+      background: var(--calc-bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+  .calc {
+    width: 300px;
+    height: 500px;
+    background-color: var(--light-grey);
+    border-radius: 15px;
+  }
+  
+  .calc__head {
+    width: 100%;
+    height: 190px;
+    background-color: var(--calc-header);
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+    .calc_area{
+        height: 67%;
+    }
+  .calc_info{
+    padding: 5px;
+    cursor: pointer;
+  }
+  .calc_header_actions{
+    position: relative;
+    width: inherit;
+  }
+  .calc_theme{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  .history{
+    width: 50%;
+    position: absolute;
+  }
+  .clear{
+    width: 50%;
+    position: absolute;
+    right: 0;
+}
+.calc_action{
+    position: relative;
+    width: 100%;
+}
+.header_button{
+    padding: 5px;
+    background: #00000017;
+    text-align: center;
+    color: orange;
+    cursor: pointer;
+}
+.right_bottom_radius{
+    border-bottom-right-radius: 15px;
+    
+}
+.left_bottom_radius{
+    border-bottom-left-radius: 15px;
+
+  }
+  
+  .number_grid{
+    display: grid;
+    grid-template-areas: "keys keys keys keys";
+  }
+
+  .keys{
+    padding: 5px;
+    text-align: center;
+    font-size: 2em;
+    border: 1px solid;
+    border-radius: 50%;
+    margin: 4px;
+    cursor: pointer;
+  }
+  .expression{
+    width: 94%;
+    padding: 5px;
+    font-size: 1.3em;
+    border-bottom: 0.5px dashed;
+  }
+  .result{
+    width: 95%;
+    padding: 5px;
+    text-align: right;
+    font-size: 1.8em;
+  }
+  .back_to_main{
+      position: fixed;
+      margin: 5px;
+      cursor: pointer;
+  }
+  .history_data{
+      margin-top: 30px;
+  }
+  #calc_history{
+      overflow-y: auto;
+      height: 100%;
+      display: none;
+      background: var(--calc-bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
